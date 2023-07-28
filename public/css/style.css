@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Custom styles for the sidebar */
+/* Untuk sidebar */
+#sidebar {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Ubah dari 'center' menjadi 'flex-start' */
+    align-items: center;
+    width: 120px;
+    /* Set the width of the sidebar */
+    height: 100%;
+    position: fixed;
+    /* Make the sidebar fixed */
+    top: 0;
+    /* Align the sidebar to the top */
+    left: 0;
+    /* Align the sidebar to the left */
+    padding-top: 20px;
+    /* Add padding to the top of the sidebar */
+    z-index: 100;
+    /* Ensure the sidebar appears in front of other content */
+}
+
+#sidebar-logo {
+    width: 70px;
+    /* Ubah ukuran logo sesuai kebutuhan */
+    height: 70px;
+    /* Ubah ukuran logo sesuai kebutuhan */
+}
+
+/* Item pada sidebar */
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 70px;
+    border-radius: 10px;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+/* Tambahkan gaya untuk konten utama */
+main {
+    margin-left: 126px;
+    /* Set the left margin to the width of the sidebar */
+    padding: 20px;
+    /* Add some padding to the main content */
+}
+
+/* Gunakan media query untuk mengatur tampilan pada layar lebih kecil */
+.nav-link:hover {
+    color: #884A39;
+}
+
+/* Adjust the spacing between the icon and text */
+.nav-link i {
+    margin-bottom: 0rem;
+    font-size: 23px
+        /* Increase icon size */
+}
+
+/* Increase text size */
+.nav-link span {
+    font-size: 14px;
+}
+
+.btn-light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 70px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #876255
+}
+
+.btn-custom i {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+
+.btn-light:hover {
+    color: #c94d20;
+    /* Warna teks menjadi putih saat dihover */
+    background-color: #79554839;
+    /* Warna latar belakang menjadi coklat saat dihover */
+}
+
+.btn-beli {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px;
+}
+
+/* Custom styles for tombol beli */
+.btn-brown {
+    background-color: #795548;
+    /* Warna coklat */
+    border-color: #795548;
+    border-radius: 12px;
+    /* Warna garis tepi coklat */
+}
+
+.btn-brown:hover {
+    background-color: #6d4c41;
+    /* Warna coklat lebih gelap saat dihover */
+    border-color: #6d4c41;
+    /* Warna garis tepi coklat lebih gelap saat dihover */
+}
+
+/* Aturan khusus untuk warna teks di card */
+#searchInput {
+    background-color: #ffffff;
+}
+
+.card-img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    /* Atur lebar gambar agar sesuai dengan kebutuhan */
+    height: 150px;
+    /* Lebar gambar akan menyesuaikan tinggi sesuai aspek rasio */
+    object-fit: cover;
+    /* Gambar akan di-crop agar sesuai dengan proporsi yang diinginkan */
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow-y: auto;
+    /* Memungkinkan aside di-scroll jika kontennya terlalu panjang */
+    /* Efek bayangan untuk aside */
+    z-index: 100;
+    /* Pastikan aside muncul di depan konten lain */
+    padding: 15px;
+    padding-bottom: 80px;
+    background-color: #ffffff;
+
+}
+
+/* Gaya tambahan untuk memisahkan "Total" dan tombol "Bayar" dari daftar item */
+.selected-items::after {
+    content: "";
+    display: block;
+    height: 10px;
+}
+
+.selected-items {
+    margin-top: 30px;
+}
+
+.selected-items h4 {
+    margin-bottom: 10px;
+    color: #6d4c41;
+    /* Warna coklat untuk judul "Bills" */
+}
+
+.selected-items ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.selected-items li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.selected-items li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.selected-items li span {
+    font-size: 12px;
+}
+
+.total-amount {
+    font-size: 14px;
+    /* Ganti ukuran font menjadi 14px */
+    font-weight: bold;
+    margin-top: 0px;
+    /* Ubah margin-top menjadi 20px */
+    margin-bottom: 10px;
+    /* Ubah margin-bottom menjadi 10px */
+    color: #7d7d7d;
+    /* Warna coklat untuk teks total amount */
+}
+
+.btn-pay {
+    width: 100%;
+    height: 50px;
+    background-color: #8d6e63;
+    /* Ganti warna latar menjadi #8d6e63 */
+    /* Warna coklat yang lebih terang untuk tombol bayar */
+    border-color: #8d6e63;
+    /* Ganti warna garis tepi menjadi #8d6e63 */
+    /* Warna coklat yang lebih terang untuk garis tepi tombol bayar */
+}
+
+.btn-pay:hover {
+    background-color: #6d4c41;
+    /* Warna coklat lebih gelap saat dihover */
+    border-color: #6d4c41;
+    /* Warna coklat lebih gelap untuk garis tepi saat dihover */
+}
+
+aside img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Untuk memberi sudut melengkung pada gambar */
+    margin-right: 10px;
+    /* Jarak antara gambar dan teks */
+}
+
+.selected-items {
+    position: relative;
+    padding: 15px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    height: 60%;
+    /* Tinggi maksimum untuk ruang bills */
+    overflow-y: auto;
+    /* Membuat daftar item dapat di-scroll */
+}
+
+.selected-items ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.selected-items li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.selected-items li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.selected-items li span {
+    font-size: 12px;
+}
+
+.selected-items .total-amount {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.selected-items .btn-pay {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+}
+
+/* Gaya khusus untuk card kasir */
+.kasir-card {
+    border: 0px solid #ccc;
+    border-radius: 10px;
+    padding: 0px;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk teks dalam card */
+.card-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #884A39;
+}
+
+.card-subtitle {
+    font-size: 12px;
+    color: #929292;
+}
+
+/* Gaya tambahan untuk memisahkan "Total" dan tombol "Bayar" dari daftar item */
+.table-responsive {
+    background-color: #ffffff;
+}
+
+.title-item {
+    font-size: 30px;
+    font-weight: bold;
+    color: #884A39;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    background-color: #795548;
+    /* Warna coklat */
+    color: #fff;
+    /* Warna teks putih */
+    border-color: #795548;
+    /* Warna garis tepi coklat */
+    padding: 8px 15px;
+    /* Atur ukuran padding */
+    border-radius: 5px;
+    /* Membuat sudut melengkung pada tombol */
+}
+
+.btn-add:hover {
+    background-color: #61433a;
+    /* Warna coklat lebih gelap saat dihover */
+    color: #fff;
+    /* Warna garis tepi coklat lebih gelap saat dihover */
+}
+
+.btn-pay:disabled {
+    background-color: #ccc;
+    /* Replace #ccc with your desired shade of grey */
+    cursor: not-allowed;
+    border: #ccc;
+}
