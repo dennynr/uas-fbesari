@@ -8,9 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-        <link href="css/style.css" rel="stylesheet">
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
@@ -33,19 +33,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('item')); ?>">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-box"></i>
                             <span>Item</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('profit')); ?>">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-cash-coin"></i>
                             <span>Profit</span>
                         </a>
                     </li>
                     <li class="nav-item mb-5">
-                        <a class="nav-link" href="<?php echo e(route('transaksi')); ?>">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-clock-history"></i>
                             <span>Transaksi</span>
                         </a>
@@ -90,106 +90,25 @@
                     <input type="text" id="searchInput" class="form-control border-0" placeholder="Cari item...">
                 </div>
             </div>
+            <h1><?php echo e($pageTitle); ?></h1>
+            <h1>$</h1>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="minum.png" alt="Barang 1" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">Jeric</h5>
-                                <p class="card-text">Deskripsi Barang 1.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp5.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="minum.png" alt="Barang 1" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">OrangeJusic</h5>
-                                <p class="card-text">Deskripsi Barang 1.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp5.000</a>
+                <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-brown d-flex border-0 rounded-4">
+                            <img src="<?php echo e(asset('minum.png')); ?>" alt="<?php echo e($post->name_item); ?>" class="card-img-center img-fluid mb-4">
+                            <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h5 class="card-title"><?php echo e($post->name_item); ?></h5>
+                                    <p class="card-text"><?php echo e($post->description); ?></p>
+                                </div>
+                                <div class="mt-2 mb-2">
+                                    <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp<?php echo e($post->price); ?></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="ombe.png" alt="Barang 2" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">Firle Jucie</h5>
-                                <p class="card-text">Deskripsi Barang 2.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp25.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="ombe.png" alt="Barang 2" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">Firle Jucie</h5>
-                                <p class="card-text">Deskripsi Barang 2.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp25.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="ombe.png" alt="Barang 2" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">Firle Jucie</h5>
-                                <p class="card-text">Deskripsi Barang 2.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp25.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="ombe.png" alt="Barang 2" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">Firle Jucie</h5>
-                                <p class="card-text">Deskripsi Barang 2.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp25.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card bg-brown d-flex border-0 rounded-4">
-                        <img src="ombe.png" alt="Barang 2" class="card-img-center img-fluid mb-4">
-                        <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
-                            <div>
-                                <h5 class="card-title">Firle Jucie</h5>
-                                <p class="card-text">Deskripsi Barang 2.</p>
-                            </div>
-                            <div class="mt-2 mb-2">
-                                <a href="#" class="btn btn-brown btn-beli text-white mt-3">Rp25.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more cards for other products -->
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </main>
         <!-- Right Sidebar -->
@@ -260,7 +179,10 @@
             existingItem.quantity++;
         } else {
             // If the item doesn't exist, add it to the selected items list
-            selectedItems.push({ ...item, quantity: 1 });
+            selectedItems.push({
+                ...item,
+                quantity: 1
+            });
         }
         totalAmount += item.price;
         updateSelectedItems();
@@ -291,15 +213,46 @@
     });
 
     // Sample data for items
-    const items = [
-        { name: 'OrangeJusic', price: 5000, image: 'minum.png' },
-        { name: 'Strovberi Firle', price: 15000, image: 'ombe.png' },
-        { name: 'Test', price: 25000, image: 'ombe.png' },
-        { name: 'Test1', price: 25000, image: 'ombe.png' },
-        { name: 'Test2', price: 25000, image: 'ombe.png' },
-        { name: 'Test3', price: 25000, image: 'ombe.png' },
-        { name: 'Test4', price: 25000, image: 'ombe.png' },
-        { name: 'Test5', price: 25000, image: 'ombe.png' },
+    const items = [{
+            name: 'OrangeJusic',
+            price: 5000,
+            image: 'minum.png'
+        },
+        {
+            name: 'Strovberi Firle',
+            price: 15000,
+            image: 'ombe.png'
+        },
+        {
+            name: 'Test',
+            price: 25000,
+            image: 'ombe.png'
+        },
+        {
+            name: 'Test1',
+            price: 25000,
+            image: 'ombe.png'
+        },
+        {
+            name: 'Test2',
+            price: 25000,
+            image: 'ombe.png'
+        },
+        {
+            name: 'Test3',
+            price: 25000,
+            image: 'ombe.png'
+        },
+        {
+            name: 'Test4',
+            price: 25000,
+            image: 'ombe.png'
+        },
+        {
+            name: 'Test5',
+            price: 25000,
+            image: 'ombe.png'
+        },
         // Add more items here if needed
     ];
 

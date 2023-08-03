@@ -6,7 +6,14 @@
         <div class="card kasir-card">
             <div class="card-body">
                 <span class="card-title">Hi Im Cashier</span><br>
-                <span class="card-subtitle">Denny Daffa Rizaldy</span>
+                <span class="card-subtitle">
+                    @if (session('username'))
+                        {{ session('username') }}
+                    @else
+                        Guest User
+                        <!-- Or any default value you want to show when no username is stored in the session -->
+                    @endif
+                </span>
             </div>
         </div>
         <h1 class="mb-4">Transaksi</h1>

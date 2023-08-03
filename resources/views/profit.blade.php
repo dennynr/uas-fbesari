@@ -5,7 +5,14 @@
         <div class="card kasir-card mb-4">
             <div class="card-body">
                 <span class="card-title">Hi Im Cashier</span><br>
-                <span class="card-subtitle">Denny Daffa Rizaldy</span>
+                <span class="card-subtitle">
+                    @if (session('username'))
+                        {{ session('username') }}
+                    @else
+                        Guest User
+                        <!-- Or any default value you want to show when no username is stored in the session -->
+                    @endif
+                </span>
             </div>
         </div>
         <h3 class="mb-4">{{ $pageTitle }}</h3>
@@ -92,15 +99,6 @@
             type: 'bar',
             data: data,
             options: options
-        });
-    </script>
-    <script>
-        // Script untuk menangani form submission
-        document.getElementById('tanggal').addEventListener('change', function() {
-            var tanggal = this.value;
-
-            // Redirect ke route filterByDate dengan tanggal sebagai parameter
-            window.location.href = "{{ route('filterByDate') }}" + "?filterDate=" + tanggal;
         });
     </script>
 @endsection
